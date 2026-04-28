@@ -54,6 +54,17 @@ if old_file and new_file:
         if col_old in merged.columns and col_new in merged.columns:
             both_mask = merged["_merge"] == "both"
             compare = merged.loc[both_mask]
+            
+            compare[col_old] = compare[col_old].astype(str).fillna("").str.strip()
+            compare[col_new] = compare[col_new].astype(str).fillna("").str.strip()
+
+    if col == "الوحدة التنظيمية":
+        compare[col_old] = compare[col_old]
+        compare[col_new] = compare[col_new].str[3:]
+
+    diff_mask = compare[col_old] != compare[col_new]
+
+
             if col == "الوحدة التنظيمية":
                 compare[col_old] = compare[col_old].astype(str).str.strip()
                 compare[col_new] = compare[col_new].astype(str).str[3:].str.strip()
