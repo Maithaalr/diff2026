@@ -27,7 +27,7 @@ if old_file and new_file:
     # البحث عن عمود الاسم
     name_col = None
     for col in old_df.columns:
-        if "اسم" in col and "الموظف" in col:
+        if "الرقم" in col and "الوظيفي" in col:
             name_col = col
             break
 
