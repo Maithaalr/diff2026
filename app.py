@@ -4,7 +4,6 @@ import plotly.express as px
 
 st.set_page_config(page_title="مقارنة بيانات الموظفين", layout="wide")
 
-st.image("logo.png", width=250)
 st.title("مقارنة مرنة بين ملفي بيانات الموظفين")
 
 
